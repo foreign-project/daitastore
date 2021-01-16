@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Daita Skincare &#8211; Pancarkan Pesona Cantikmu</title>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="style/main.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top navbar-fixed-top" data-aos="fade-down">
+        <div class="container">
+            <a class="navbar-brand" href="/index.html">
+                <img src="/images/Logo.svg" alt="" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav navbar-store ml-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/">Home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/product.html">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Customer Care</a>
+                    </li>
+                </ul>
+                <!-- Desktop version -->
+                <ul class="navbar-nav navbar-store d-none d-lg-flex">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown">
+                            <img src="/images/drawable-xxxhdpi/icon_user.png" alt="" class="rounded-circle mr-2 profile-picture"> Hi,User
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="/dashboard.html" class="dropdown-item">Dashboard</a>
+                            <a href="/dashboard-account.html" class="dropdown-item">Setting</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="/" class="dropdown-item">Logout</a>
+                        </div>
+                        <li>
+                            <a href="" class="nav-link d-inline-block mt-2">
+                                <img src="/images/icon_cart_empty.svg" alt="">
+                            </a>
+                        </li>
+                    </li>
+                </ul>
+                <!-- Mobile Version -->
+                <ul class="navbar-nav navbar-store d-block d-lg-none">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Hi, User</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link d-inline-block">Cart</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- page content -->
+    <div class="page-content page-details">
+        <section class="store-breadcrumbs " data-aos="fade-down" data-aos-delay="100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Product Details</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="store-gallery" id="gallery">
+            <div class="container ">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="jarak col-lg-7 " data-aos="zoom-in">
+                                <transition name="slide-fade" mode="out-in">
+                                    <img :src="photos[activePhoto].url" :key="photos[activePhoto].id" class="w-100 main-image" alt="">
+                                </transition>
+                                <!-- Desktop Version -->
+                                <div class="d-none d-lg-flex ">
+                                    <div class="d-inline-flex" v-for="(photo, index) in photos" :key="photo.id" data-aos="fade-up" data-aos-delay="200">
+                                        <a href="#" @click="changeActive(index)">
+                                            <img :src="photo.url" class="thumbnail-image" style="width: 191px;" :class="{ active: index == activePhoto }" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- Mobile Version -->
+                                <div class="d-lg-none ">
+                                    <div class="d-inline-flex" v-for="(photo, index) in photos" :key="photo.id" data-aos="zoom-in" data-aos-delay="200">
+                                        <a href="#" @click="changeActive(index)">
+                                            <img :src="photo.url" class="thumbnail-image" style="width: 130px;" :class="{ active: index == activePhoto }" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="store-info col-lg-5" data-aos="fade-left" data-aos-delay="200">
+                                <span>Daita</span>
+                                <h1 style="margin-bottom: 15px;">Brightening Facial Foam</h1>
+                                <p>Pembersih wajah yang diformulasikan khusus untuk membersihkan kulit wajahmu hingga tuntas sampai ke pori-pori dan mencerahkan kulit yang kusam. Mengandung Vitamin C yang dapat membantu mencerahkan kulit wajah, serta dilengkapi
+                                    dengan Niacinamide Personal Care/ Vit B3 untuk membantu menghilangkan noda hitam pada kulit wajah.</p>
+                                <div class="price">Rp. 35.000 </div>
+                                <a href="/cart.html" class="btn btn-success text-white mt-3 pd-cart">ADD TO CART</a>
+                            </div>
+                        </div>
+                        <div class="jarak store-description">
+                            <div class="row">
+                                <div class="col-lg-10">
+                                    <section class="section-penggunaan" data-aos="fade-up" data-aos-delay="200">
+                                        <h3>Cara Penggunaan</h3>
+                                        <p class="mt-3">Basahi wajah, busakan foam pada telapak tangan, usapkan pada wajah dengan pijatan lembut lalu bilas. Untuk mendapatkan hasil yang baik, gunakan setiap hari.</p>
+                                    </section>
+                                    <section class="section-bahan" data-aos="fade-up" data-aos-delay="400">
+                                        <h3 class="mt-4">Bahan - Bahan</h3>
+                                        <p class="mt-3">Aqua, Glycerin, Stearic Acid, Potassium, Hydroxide, Lauric Acid, Myristic Acid, Peg-150 distearate, Niacinamide, Ethyl ascorbic acid, Fragrance ( Parfum) Components and Finished Fragrances, Disodium EDTA, BHT.</p>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        </div>
+
+        <!-- footer -->
+        <footer class="section-footer  mb-4 border-top" data-aos="fade-up" data-aos-delay="200">
+            <div class="container pt-5 pb-5">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12 col-lg-7">
+                                <img src="/images/Logo.svg" alt="" />
+                                <ul class="list-unstyled mt-2">
+                                    <li><a href="">Address : Golden 8 Blok F no.15, Gading Serpong</a></li>
+                                    <li><a href="">Phone : +628 7882712065</a></li>
+                                    <li><a href="">Email: daita@gmail.com</a></li>
+                                </ul>
+                                <div class="footer-social">
+                                    <a href="#">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-3 ml-auto">
+                                <h5>INFORMATION</h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="">About Us</a></li>
+                                    <li><a href="">Checkout</a></li>
+                                    <li><a href="">Contact</a></li>
+                                    <li><a href="">Service</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-lg-2 ml-auto">
+                                <h5>ACCOUNT</h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="">My Account</a></li>
+                                    <li><a href="">Contact</a></li>
+                                    <li><a href="">Shopping Cart</a></li>
+                                    <li><a href="">Shop</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row border-top justify-content-center align-items-center pt-4">
+                    <div class="col-auto text-grey-500 font-weight-light">
+                        2020 Copyright Store. All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="/vendor/jquery/jquery.slim.min.js"></script>
+        <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <script src="/vendor/vue/vue.js"></script>
+        <script>
+            var gallery = new Vue({
+                el: "#gallery",
+                mounted() {
+                    AOS.init();
+                },
+                data: {
+                    activePhoto: 0,
+                    photos: [{
+                        id: 1,
+                        url: "/images/drawable-xxxhdpi/product-details-1.png",
+                    }, {
+                        id: 2,
+                        url: "/images/drawable-xxxhdpi/product-details-2.png",
+                    }, {
+                        id: 3,
+                        url: "/images/drawable-xxxhdpi/product-details-3.png",
+                    }, ],
+                },
+                methods: {
+                    changeActive(id) {
+                        this.activePhoto = id;
+
+                    }
+                }
+            });
+        </script>
+        <script src="/script/navbar-scroll.js"></script>
+</body>
+
+</html>
